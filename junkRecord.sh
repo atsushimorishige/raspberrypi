@@ -157,4 +157,6 @@ rtmpdump -v \
 ffmpeg -y -i "/tmp/${channel}_${date}" -acodec libmp3lame -ab 32k "${outdir}/${channel}_${date}_${person}.mp3"
 if [ $? = 0 ]; then
   rm -f "/tmp/${channel}_${date}"
+  python "/home/pi/bin/makeId.py" "${outdir}/${channel}_${date}_${person}.mp3" 
 fi
+
